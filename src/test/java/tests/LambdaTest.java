@@ -16,25 +16,25 @@ public class LambdaTest {
 
     @Test
     public void testIssueSearch() {
-        step("Open Github", () -> {
-            open(BASE_URL);
-        });
+        step("Open Github", () ->
+            open(BASE_URL));
+
         step("Enter repo name: " + REPOSITORY + " into the search input", () -> {
             $(".header-search-input").click();
             $(".header-search-input").sendKeys(REPOSITORY);
         });
-        step("Execute search request ",() -> {
-            $(".header-search-input").submit();
-        });
-        step("Open repository: " + REPOSITORY, () -> {
-            $(By.linkText(REPOSITORY)).click();
-        });
-        step("Open 'Issues' tab", () -> {
-            $("[href='/" + REPOSITORY + "/issues']").click();
-        });
-        step("Ensure an issue #" + ISSUE_NUMBER + " is present in the issues list",() -> {
-            $(withText("#" + ISSUE_NUMBER)).should(Condition.exist);
-        });
+
+        step("Execute search request",() ->
+            $(".header-search-input").submit());
+
+        step("Open repository: " + REPOSITORY, () ->
+            $(By.linkText(REPOSITORY)).click());
+
+        step("Open 'Issues' tab", () ->
+            $("[href='/" + REPOSITORY + "/issues']").click());
+
+        step("Ensure an issue #" + ISSUE_NUMBER + " is present in the issues list",() ->
+            $(withText("#" + ISSUE_NUMBER)).should(Condition.exist));
     }
 
 }

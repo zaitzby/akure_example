@@ -15,7 +15,7 @@ public class AnnotationTest {
         steps.enterSearchData(REPOSITORY);
         steps.executeSearchRequest();
         steps.openRepoPage(REPOSITORY);
-        steps.openIssuesTabatRepoPage(REPOSITORY);
+        steps.openIssuesTabAtRepoPage(REPOSITORY);
         steps.checkIssuePresence(ISSUE_NUMBER);
     }
 
